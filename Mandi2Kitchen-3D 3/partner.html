@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Partner Onboarding | Mandi2Kitchen</title>
+    <meta name="description" content="Tell Mandi2Kitchen about your restaurant and produce needs. We'll confirm delivery coverage, availability and market rates after sourcing.">
+    <meta name="theme-color" content="#07100c">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Mandi2Kitchen">
+    <meta property="og:title" content="Restaurant Partner Onboarding | Mandi2Kitchen">
+    <meta property="og:description" content="Share your restaurant and delivery requirements to start a produce procurement conversation.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="visual-refresh.css">
+  </head>
+  <body>
+    <div class="grain">
+    </div>
+    <header class="nav">
+      <a class="brand" href="index.html#home">
+        <span class="logo">M2K</span>
+        <span>
+          <b>Mandi2Kitchen</b>
+          <small>Fresh From Mandi. Straight to Your Kitchen.</small>
+        </span>
+      </a>
+      <nav id="siteNav">
+        <a href="products.html">Products</a>
+        <a href="service-areas.html">Service Areas</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="siteNav" onclick="togglePartnerMenu()" title="Open navigation menu">
+        <span>
+        </span>
+        <span>
+        </span>
+        <span>
+        </span>
+      </button>
+      <div class="nav-actions">
+        <a class="wa" href="https://wa.me/919695871673?text=Hello%20Mandi2Kitchen%2C%20I%E2%80%99m%20interested%20in%20ordering%20fresh%20produce.%0A%0AMy%20name%3A%20%5BYour%20name%5D%0ARestaurant%3A%20%5BRestaurant%20name%5D%0ADelivery%20area%3A%20%5BArea%5D%0A%0APlease%20let%20me%20know%20how%20to%20get%20started." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a class="primary order-link" href="products.html">Browse Produce</a>
+      </div>
+    </header>
+    <main id="mainContent" class="partner-page">
+      <section class="partner-hero">
+        <div class="partner-hero-inner">
+          <a class="partner-back" href="index.html">← Back to Mandi2Kitchen</a>
+          <span class="eyebrow">RESTAURANT PARTNER ONBOARDING</span>
+          <h1>Let’s make your produce supply work better.</h1>
+          <p>Tell us about your kitchen, delivery location and regular produce needs. We’ll follow up to confirm coverage, availability and the market rate after sourcing.</p>
+        </div>
+      </section>
+      <section class="partner-layout" aria-label="Restaurant partner inquiry">
+        <form class="partner-form" id="partnerForm">
+          <span class="eyebrow">YOUR BUSINESS</span>
+          <h2>Start with your kitchen details.</h2>
+          <p>Required fields help us route your inquiry. Product mix and volume estimates are optional.</p>
+          <div class="partner-fields">
+            <label>
+              <span>Restaurant or business name *</span>
+              <input name="businessName" autocomplete="organization" required placeholder="Business name">
+            </label>
+            <label>
+              <span>Your name *</span>
+              <input name="contactName" autocomplete="name" required placeholder="Contact person">
+            </label>
+            <label>
+              <span>WhatsApp / phone *</span>
+              <input name="phone" type="tel" autocomplete="tel" required placeholder="+91">
+            </label>
+            <label>
+              <span>Email (optional)</span>
+              <input name="email" type="email" autocomplete="email" placeholder="name@restaurant.com">
+            </label>
+            <label>
+              <span>Business type *</span>
+              <select name="businessType" required>
+                <option value="">Choose business type</option>
+                <option>Restaurant</option>
+                <option>Hotel</option>
+                <option>Cafe</option>
+                <option>Cloud kitchen</option>
+                <option>Caterer</option>
+                <option>Canteen or mess</option>
+                <option>Other</option>
+              </select>
+            </label>
+            <label>
+              <span>Delivery area *</span>
+              <input name="deliveryArea" autocomplete="address-level2" required placeholder="Area, city (e.g. Vashi, Navi Mumbai)">
+            </label>
+            <label class="partner-full">
+              <span>Delivery address (optional)</span>
+              <textarea name="address" autocomplete="street-address" placeholder="Street, building and landmark">
+              </textarea>
+            </label>
+            <label>
+              <span>Ordering frequency (optional)</span>
+              <select name="frequency">
+                <option value="">Select frequency</option>
+                <option>Daily</option>
+                <option>2–3 times per week</option>
+                <option>Weekly</option>
+                <option>As needed</option>
+                <option>Not sure yet</option>
+              </select>
+            </label>
+            <label>
+              <span>Approx. weekly produce volume (optional)</span>
+              <select name="volume">
+                <option value="">Select estimate</option>
+                <option>Under 50 kg</option>
+                <option>50–200 kg</option>
+                <option>201–500 kg</option>
+                <option>Over 500 kg</option>
+                <option>Not sure yet</option>
+              </select>
+            </label>
+            <label class="partner-full">
+              <span>Regular produce and specifications (optional)</span>
+              <textarea name="produceNeeds" placeholder="Common items, grades, sizes, varieties or special requirements">
+              </textarea>
+            </label>
+            <label class="partner-full">
+              <span>Anything else we should know? (optional)</span>
+              <textarea name="notes" placeholder="Receiving hours, access instructions or questions">
+              </textarea>
+            </label>
+          </div>
+          <button class="primary xl" type="submit">Send Partner Inquiry on WhatsApp →</button>
+          <p class="partner-privacy">This opens WhatsApp with your inquiry details. Nothing is stored on this website.</p>
+        </form>
+        <aside class="partner-aside">
+          <span class="eyebrow">WHAT HAPPENS NEXT</span>
+          <h2>A clear start to the supply conversation.</h2>
+          <ol class="partner-steps">
+            <li>
+              <span>01</span>
+              <div>
+                <b>Share your requirements</b>
+                <p>Tell us where you operate and what your kitchen uses.</p>
+              </div>
+            </li>
+            <li>
+              <span>02</span>
+              <div>
+                <b>Confirm coverage and sourcing</b>
+                <p>We check delivery availability and the requested produce.</p>
+              </div>
+            </li>
+            <li>
+              <span>03</span>
+              <div>
+                <b>Review the market rate</b>
+                <p>Rates are confirmed after sourcing; final billing follows the market purchase rate.</p>
+              </div>
+            </li>
+          </ol>
+          <p class="partner-rate-note">
+            <strong>No fixed catalogue prices.</strong> Submitting this inquiry does not confirm an order, delivery slot or rate. We’ll confirm details with you directly.</p>
+        </aside>
+      </section>
+    </main>
+    <footer class="partner-footer">
+      <div class="partner-footer-inner">
+        <span>© 2026 Mandi2Kitchen</span>
+        <a href="index.html">Back to home</a>
+      </div>
+    </footer>
+    <script src="partner.js" defer>
+    </script>
+  </body>
+</html>
