@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Mandi2Kitchen — Fresh From Mandi. Straight to Your Kitchen.</title>
+    <meta name="description" content="B2B fresh-produce procurement and restaurant supply across Mumbai, Navi Mumbai and Thane.">
+    <meta name="theme-color" content="#07100c">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Mandi2Kitchen">
+    <meta property="og:title" content="Mandi2Kitchen — Fresh From Mandi. Straight to Your Kitchen.">
+    <meta property="og:description" content="Restaurant produce procurement across Mumbai, Navi Mumbai and Thane. Place your quantities first; final billing follows the market purchase rate.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="visual-refresh.css">
+  </head>
+  <body class="home-page">
+    <div class="grain">
+    </div>
+    <header class="nav">
+      <a class="brand" href="#home">
+        <span class="logo">M2K</span>
+        <span>
+          <b>Mandi2Kitchen</b>
+          <small>Fresh From Mandi. Straight to Your Kitchen.</small>
+        </span>
+      </a>
+      <nav id="siteNav">
+        <a href="how-it-works.html">How It Works</a>
+        <a href="products.html">Products</a>
+        <a href="service-areas.html">Service Areas</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="siteNav" onclick="toggleMenu()" title="Open navigation menu">
+        <span>
+        </span>
+        <span>
+        </span>
+        <span>
+        </span>
+      </button>
+      <div class="nav-actions">
+        <a class="wa" href="https://wa.me/919695871673?text=Hello%20Mandi2Kitchen%2C%20I%E2%80%99m%20interested%20in%20ordering%20fresh%20produce.%0A%0AMy%20name%3A%20%5BYour%20name%5D%0ARestaurant%3A%20%5BRestaurant%20name%5D%0ADelivery%20area%3A%20%5BArea%5D%0A%0APlease%20let%20me%20know%20how%20to%20get%20started." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a class="primary order-link" href="products.html">Start Ordering <span class="order-count" id="orderCount" aria-live="polite" hidden>
+          </span>
+        </a>
+      </div>
+    </header>
+    <main id="home">
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow">
+            <i>
+            </i> B2B MARKET PROCUREMENT · MUMBAI REGION</div>
+          <h1>Fresh produce procurement<br>for professional kitchens.</h1>
+          <p>Share your quantities, delivery location and timing. We check market availability, then confirm current rates and delivery details with you before fulfillment.</p>
+          <div class="hero-cta">
+            <a class="primary xl" href="products.html">Build an Order <span>↗</span>
+            </a>
+            <a class="secondary" href="partner.html">Business Onboarding</a>
+          </div>
+          <div class="trust">
+            <span>✓ Daily procurement</span>
+            <span>✓ Custom quantities</span>
+            <span>✓ Market-based pricing</span>
+          </div>
+        </div>
+        <div class="scene" aria-label="3D fresh produce scene">
+          <div class="orbit orbit1">
+          </div>
+          <div class="orbit orbit2">
+          </div>
+          <div class="crate">
+            <div class="crate-top">
+              <span>APMC</span>
+              <b>FRESH</b>
+            </div>
+            <div class="crate-front">
+            </div>
+            <div class="crate-side">
+            </div>
+            <div class="produce p1">🍅</div>
+            <div class="produce p2">🥬</div>
+            <div class="produce p3">🥕</div>
+            <div class="produce p4">🌶️</div>
+            <div class="produce p5">🥦</div>
+          </div>
+          <div class="float-card card1">
+            <span class="dot green">
+            </span>
+            <div>
+              <b>Order quantities</b>
+              <small>Daily kitchen requirements</small>
+            </div>
+          </div>
+          <div class="float-card card2">
+            <span class="truck">▰</span>
+            <div>
+              <b>Delivery slot</b>
+              <small>Confirmed after sourcing</small>
+            </div>
+          </div>
+          <div class="float-card card3">
+            <b>Market rate</b>
+            <small>Billed after sourcing</small>
+          </div>
+        </div>
+      </section>
+      <section class="ticker">
+        <div>RESTAURANTS</div>
+        <div>CAFÉS</div>
+        <div>HOTELS</div>
+        <div>CLOUD KITCHENS</div>
+        <div>CATERERS</div>
+        <div>CANTEENS</div>
+        <div>MESS</div>
+      </section>
+      <section class="section process">
+        <div class="section-head" data-home-reveal>
+          <span class="eyebrow">THE FLOW</span>
+          <h2>Procurement from market<br>
+            <em>to your kitchen.</em>
+          </h2>
+          <p>See how an order moves from your kitchen list to market sourcing and delivery confirmation.</p>
+          <a class="primary" href="how-it-works.html">How ordering works →</a>
+        </div>
+      </section>
+      <section class="section products">
+        <div class="section-head" data-home-reveal>
+          <span class="eyebrow">PRODUCT ORDERING</span>
+          <h2>The produce catalogue,<br>
+            <em>all in one place.</em>
+          </h2>
+          <p>Browse the full vegetable range, build your quantities and send delivery details from the dedicated ordering page. Rates are confirmed after sourcing.</p>
+          <div class="hero-cta">
+            <a class="primary" href="products.html">Open Produce Catalogue →</a>
+            <button class="outline" onclick="openRequest()">Request a custom item</button>
+          </div>
+        </div>
+      </section>
+      <section class="quote-section">
+        <div data-home-reveal>
+          <span class="eyebrow">BULK & CUSTOM PROCUREMENT</span>
+          <h2>Bulk and custom<br>requirements.</h2>
+          <p>Send large-volume needs, seasonal items, grades or regional varieties. We’ll check sourcing capacity and reply with availability, current rates, delivery details and any applicable charges for your approval.</p>
+          <button class="primary" onclick="openRequest()">Request a Sourcing Check</button>
+        </div>
+        <div class="quote-panel" data-home-reveal>
+          <div class="quote-row">
+            <span>01</span>
+            <b>Share quantities</b>
+            <i>Order request</i>
+          </div>
+          <div class="quote-row">
+            <span>02</span>
+            <b>Check market details</b>
+            <i>Availability and unit rates</i>
+          </div>
+          <div class="quote-row">
+            <span>03</span>
+            <b>Review and approve</b>
+            <i>Before fulfillment</i>
+          </div>
+          <div class="quote-total">
+            <span>Final bill</span>
+            <strong>Final bill follows market purchase rate</strong>
+          </div>
+        </div>
+      </section>
+      <section class="section service-preview">
+        <div class="section-head" data-home-reveal>
+          <span class="eyebrow">SERVICE AREA</span>
+          <h2>Mumbai.<br>Navi Mumbai.<br>Thane District.</h2>
+          <p>Share your delivery location with each order. We’ll confirm coverage, availability, delivery timing and any charges before fulfillment.</p>
+          <a class="primary" href="service-areas.html">View service areas →</a>
+        </div>
+      </section>
+      <section id="about" class="section metrics">
+        <div data-home-reveal>
+          <span class="eyebrow">BUILT FOR RESTAURANT PROCUREMENT</span>
+          <h2>Less market time.<br>
+            <em>More kitchen time.</em>
+          </h2>
+        </div>
+        <div class="metric-grid" data-home-reveal>
+          <div>
+            <strong>Daily</strong>
+            <span>Order requests</span>
+          </div>
+          <div>
+            <strong>Custom</strong>
+            <span>Product needs</span>
+          </div>
+          <div>
+            <strong>Market</strong>
+            <span>Linked pricing</span>
+          </div>
+          <div>
+            <strong>WhatsApp</strong>
+            <span>Order handoff</span>
+          </div>
+        </div>
+      </section>
+      <section id="faq" class="section faq">
+        <div class="section-head" data-home-reveal>
+          <span class="eyebrow">QUICK ANSWERS</span>
+          <h2>Good to know<br>
+            <em>before you order.</em>
+          </h2>
+        </div>
+        <div class="faq-grid" data-home-reveal>
+          <details>
+            <summary>How are product rates decided?</summary>
+            <p>Rates vary with the market. We confirm availability, current unit rates and any applicable charges in WhatsApp. Final billing follows the market purchase rate.</p>
+          </details>
+          <details>
+            <summary>How do I place an order?</summary>
+            <p>Add products and quantities in the catalogue, then send your delivery details to our WhatsApp Business account.</p>
+          </details>
+          <details>
+            <summary>Will every product be available?</summary>
+            <p>Availability changes with the market. We confirm each requested item before accepting the order.</p>
+          </details>
+          <details>
+            <summary>When is my order confirmed?</summary>
+            <p>We send the availability, rates and delivery details for review. The order moves forward after you approve the details in WhatsApp.</p>
+          </details>
+          <details>
+            <summary>What is the minimum order?</summary>
+            <p>The minimum is 10 kg combined across products ordered in kilograms. Items ordered by piece, bunch, box or crate do not count toward the 10 kg minimum.</p>
+          </details>
+          <details>
+            <summary>How are delivery charges and timing handled?</summary>
+            <p>Coverage, delivery timing and any applicable charges are confirmed for your location and requested date before you approve.</p>
+          </details>
+          <details>
+            <summary>What if an item is unavailable?</summary>
+            <p>We’ll confirm availability with you. Substitutions are not assumed; tell us your preference and approve any changes in WhatsApp.</p>
+          </details>
+          <details>
+            <summary>How can I report a delivery issue?</summary>
+            <p>If an item is missing or not as requested, message us with your PO or order reference, affected item, quantity and a photo if available. <a href="https://wa.me/919695871673?text=ORDER%20FOLLOW-UP%20%E2%80%94%20Mandi2Kitchen%0A%0APO%20or%20order%20reference%3A%20%0AAffected%20item%3A%20%0AQuantity%3A%20%0ADescription%20of%20issue%3A%20%0APhoto%20available%3A%20Yes%20%2F%20No" target="_blank" rel="noopener noreferrer">Contact order support on WhatsApp.</a></p>
+          </details>
+          <details>
+            <summary>How do I check an order’s status?</summary>
+            <p>Status updates are handled directly in WhatsApp, not through a live website tracker. <a href="https://wa.me/919695871673?text=ORDER%20STATUS%20UPDATE%20%E2%80%94%20Mandi2Kitchen%0A%0APO%20or%20order%20reference%3A%20%0ARestaurant%3A%20%0ADelivery%20date%3A%20%0APlease%20share%20the%20latest%20order%20status." target="_blank" rel="noopener noreferrer">Request an update with your order reference.</a></p>
+          </details>
+          <details>
+            <summary>How do I check an order’s status?</summary>
+            <p>Status updates are handled directly in WhatsApp, not through a live website tracker. <a href="https://wa.me/919695871673?text=ORDER%20STATUS%20UPDATE%20%E2%80%94%20Mandi2Kitchen%0A%0APO%20or%20order%20reference%3A%20%0ARestaurant%3A%20%0ADelivery%20date%3A%20%0APlease%20share%20the%20latest%20order%20status." target="_blank" rel="noopener noreferrer">Request an update with your order reference.</a></p>
+          </details>
+          <details>
+            <summary>Can I request a product not listed?</summary>
+            <p>Yes. Use the custom produce request on the catalogue page to send the product, quantity and specifications.</p>
+          </details>
+        </div>
+      </section>
+      <section id="contact" class="contact">
+        <div data-home-reveal>
+          <span class="eyebrow">READY TO SIMPLIFY PROCUREMENT?</span>
+          <h2>Tell us what your<br>
+            <em>kitchen needs.</em>
+          </h2>
+          <p>WhatsApp your requirement, call us, or email us for restaurant onboarding and procurement enquiries.</p>
+        </div>
+        <div class="contact-card" data-home-reveal>
+          <a href="https://wa.me/919695871673?s=t" target="_blank" rel="noopener noreferrer">
+            <small>WHATSAPP</small>
+            <b>+91 96958 71673 ↗</b>
+          </a>
+          <a href="tel:+919695871673">
+            <small>CALL</small>
+            <b>+91 96958 71673 ↗</b>
+          </a>
+          <a href="mailto:mandi2kitchen@gmail.com">
+            <small>EMAIL</small>
+            <b>mandi2kitchen@gmail.com ↗</b>
+          </a>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="brand">
+        <span class="logo">M2K</span>
+        <span>
+          <b>Mandi2Kitchen</b>
+          <small>Fresh From Mandi. Straight to Your Kitchen.</small>
+        </span>
+      </div>
+      <span>© 2026 Mandi2Kitchen. Subject to market availability and confirmation.</span>
+    </footer>
+    <div class="modal" id="requestModal">
+      <div class="modal-box">
+        <button class="close" onclick="closeModal()">×</button>
+        <span class="eyebrow">CUSTOM PROCUREMENT</span>
+        <h2>Request any vegetable.</h2>
+        <p>Tell us the product, quantity and date. We will check market availability and confirm the rate.</p>
+        <div class="form-grid">
+          <input id="reqProduct" placeholder="Product name">
+          <input id="reqQty" type="number" placeholder="Quantity">
+          <select id="reqUnit">
+            <option>kg</option>
+            <option>piece</option>
+            <option>bunch</option>
+            <option>box</option>
+            <option>crate</option>
+          </select>
+          <input id="reqDate" type="date">
+          <input id="reqQuality" placeholder="Quality / size / variety">
+          <textarea id="reqNotes" placeholder="Notes or special requirement">
+          </textarea>
+        </div>
+        <button class="primary wide" onclick="sendRequest()">Request via WhatsApp →</button>
+      </div>
+    </div>
+    <script src="app.js">
+    </script>
+  </body>
+</html>

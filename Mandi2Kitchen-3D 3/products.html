@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produce Catalogue & Ordering | Mandi2Kitchen</title>
+    <meta name="description" content="Browse vegetables for restaurant kitchens, build an order and send delivery details to Mandi2Kitchen.">
+    <meta name="theme-color" content="#07100c">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Mandi2Kitchen">
+    <meta property="og:title" content="Produce Catalogue & Ordering | Mandi2Kitchen">
+    <meta property="og:description" content="Build a restaurant produce order. Market rates are confirmed after sourcing.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="visual-refresh.css">
+  </head>
+  <body>
+    <div class="grain">
+    </div>
+    <header class="nav">
+      <a class="brand" href="index.html#home">
+        <span class="logo">M2K</span>
+        <span>
+          <b>Mandi2Kitchen</b>
+          <small>Fresh From Mandi. Straight to Your Kitchen.</small>
+        </span>
+      </a>
+      <nav id="siteNav">
+        <a href="how-it-works.html">How It Works</a>
+        <a href="#catalog">Products</a>
+        <a href="service-areas.html">Service Areas</a>
+        <a href="partner.html">Partner with us</a>
+      </nav>
+      <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="siteNav" onclick="toggleMenu()" title="Open navigation menu">
+        <span>
+        </span>
+        <span>
+        </span>
+        <span>
+        </span>
+      </button>
+      <div class="nav-actions">
+        <a class="wa" href="https://wa.me/919695871673?text=Hello%20Mandi2Kitchen%2C%20I%E2%80%99m%20interested%20in%20ordering%20fresh%20produce.%0A%0AMy%20name%3A%20%5BYour%20name%5D%0ARestaurant%3A%20%5BRestaurant%20name%5D%0ADelivery%20area%3A%20%5BArea%5D%0A%0APlease%20let%20me%20know%20how%20to%20get%20started." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <button class="primary" type="button" onclick="openOrder()">Review Order <span class="order-count" id="orderCount" aria-live="polite" hidden>
+          </span>
+        </button>
+      </div>
+    </header>
+    <main id="catalog">
+      <section class="section products">
+        <div class="section-head">
+          <a class="partner-back" href="index.html">← Back to Mandi2Kitchen</a>
+          <span class="eyebrow">RESTAURANT PRODUCE CATALOGUE</span>
+          <h1>Build your kitchen order.</h1>
+          <p>Choose products and quantities for your kitchen. Minimum order is 10 kg across items measured in kilograms; pieces, bunches, boxes and crates do not count toward that minimum. Availability and rates are confirmed in WhatsApp.</p>
+        </div>
+        <div class="catalog-tools">
+          <label>Find a product<input id="catalogSearch" type="search" placeholder="Search vegetables…">
+          </label>
+          <label>Category<select id="catalogCategory">
+              <option value="">All categories</option>
+            </select>
+          </label>
+          <span id="productResults" class="catalog-results" role="status" aria-live="polite">
+          </span>
+        </div>
+        <div class="catalog-actions">
+          <button id="favoritesOnly" class="favorite-filter" type="button" aria-pressed="false">☆ Favorites</button>
+          <button id="repeatLastOrder" class="repeat-order" type="button" hidden>Repeat previous order</button>
+        </div>
+        <div class="product-grid" id="productGrid">
+        </div>
+        <button class="outline wide" type="button" onclick="openRequest()">Can't find your product? Request it →</button>
+      </section>
+    </main>
+    <div id="catalogCart" class="catalog-cart" aria-live="polite" hidden>
+      <span id="catalogCartSummary">
+      </span>
+      <button type="button" class="catalog-clear" onclick="clearOrder()">Clear basket</button>
+      <button type="button" class="primary" onclick="openOrder()">Review order →</button>
+    </div>
+    <div id="catalogToast" class="catalog-toast" role="status" aria-live="polite">
+    </div>
+    <footer class="partner-footer">
+      <div class="partner-footer-inner">
+        <span>© 2026 Mandi2Kitchen</span>
+        <a href="index.html">Back to home</a>
+      </div>
+    </footer>
+    <div class="modal" id="orderModal">
+      <div class="modal-box">
+        <button class="close" type="button" onclick="closeModal()" aria-label="Close order">×</button>
+        <span class="eyebrow">FAST B2B ORDER</span>
+        <h2>Build your kitchen order.</h2>
+        <p class="pricing-note">Rates vary with the market. We’ll confirm availability, current unit rates, delivery details and any applicable charges in WhatsApp. Your order is not confirmed until you approve the details; final billing follows the market purchase rate.</p>
+        <div class="order-lines" id="orderLines">
+        </div>
+        <p id="kilogramMinimumStatus" class="kilogram-minimum-status" role="status" aria-live="polite" tabindex="-1">Kilogram items: 0 kg / 10 kg minimum. Other units do not count toward the minimum.</p>
+        <div class="add-line">
+          <input id="customProduct" placeholder="Any product…" aria-label="Custom product">
+          <input id="customQty" type="number" min="0.1" step="0.1" placeholder="Qty" aria-label="Custom product quantity">
+          <select id="customUnit" aria-label="Custom product unit">
+            <option>kg</option>
+            <option>piece</option>
+            <option>bunch</option>
+            <option>box</option>
+            <option>crate</option>
+          </select>
+          <button type="button" onclick="addLine()">Add</button>
+        </div>
+        <details class="order-templates">
+          <summary>Saved order templates</summary>
+          <p>Templates are stored only in this browser, not on a server.</p>
+          <div class="order-template-save">
+            <label>
+              <span>Save current basket as</span>
+              <input id="orderTemplateName" maxlength="40" placeholder="e.g. Daily prep">
+            </label>
+            <button type="button" onclick="saveOrderTemplate()">Save basket</button>
+          </div>
+          <div class="order-template-load">
+            <label>
+              <span>Choose a saved template</span>
+              <select id="savedOrderTemplates">
+                <option value="">No templates saved</option>
+              </select>
+            </label>
+              <button id="loadOrderTemplateButton" type="button" onclick="loadOrderTemplate()" disabled>Load</button>
+              <button id="deleteOrderTemplateButton" type="button" onclick="deleteOrderTemplate()" disabled>Delete</button>
+          </div>
+        </details>
+        <details class="delivery-locations">
+          <summary>Saved delivery locations</summary>
+          <p>Save frequently used kitchens on this device. Locations are not uploaded to a server.</p>
+          <div class="order-template-save">
+            <label>
+              <span>Save current delivery details as</span>
+              <input id="deliveryLocationName" maxlength="40" placeholder="e.g. Vashi kitchen">
+            </label>
+            <button type="button" onclick="saveDeliveryLocation()">Save location</button>
+          </div>
+          <div class="order-template-load">
+            <label>
+              <span>Choose a saved location</span>
+              <select id="savedDeliveryLocations" onchange="updateDeliveryLocationButtons()">
+                <option value="">No locations saved</option>
+              </select>
+            </label>
+            <button id="applyDeliveryLocationButton" type="button" onclick="applyDeliveryLocation()" disabled>Use location</button>
+            <button id="deleteDeliveryLocationButton" type="button" onclick="deleteDeliveryLocation()" disabled>Delete</button>
+          </div>
+        </details>
+        <div class="form-grid order-details">
+          <label>
+            <span>Restaurant / business name</span>
+            <input id="restaurantName" autocomplete="organization" required placeholder="Business name">
+          </label>
+          <label>
+            <span>Your name</span>
+            <input id="orderContactName" autocomplete="name" required placeholder="Contact person">
+          </label>
+          <label>
+            <span>Contact phone</span>
+            <input id="orderPhone" type="tel" autocomplete="tel" inputmode="tel" required placeholder="+91 98765 43210">
+          </label>
+          <label>
+            <span>Delivery area</span>
+            <select id="orderArea" required>
+              <option value="">Choose service area</option>
+              <option>Mumbai</option>
+              <option>Vashi</option>
+              <option>Sanpada</option>
+              <option>Nerul</option>
+              <option>Seawoods</option>
+              <option>Belapur</option>
+              <option>Kharghar</option>
+              <option>Airoli</option>
+              <option>Panvel</option>
+              <option>Thane</option>
+              <option>Other / confirm availability</option>
+            </select>
+          </label>
+          <label>
+            <span>Required delivery date</span>
+            <input id="orderDate" type="date" required>
+          </label>
+          <label>
+            <span>Preferred delivery window (optional)</span>
+            <select id="orderWindow">
+              <option value="">No preference</option>
+              <option>Early morning</option>
+              <option>Morning</option>
+              <option>Afternoon</option>
+              <option>Evening</option>
+            </select>
+          </label>
+          <label>
+            <span>PO / kitchen reference (optional)</span>
+            <input id="orderReference" maxlength="60" placeholder="PO number or kitchen name">
+          </label>
+          <label class="full">
+            <span>Delivery address and landmark</span>
+            <textarea id="orderAddress" rows="2" required placeholder="Street, building, area and landmark">
+            </textarea>
+          </label>
+          <label class="full">
+            <span>Out-of-stock preference (optional)</span>
+            <select id="orderSubstitution">
+              <option value="">Please confirm with me before substituting</option>
+              <option>No substitutions</option>
+              <option>Equivalent item only with my approval</option>
+            </select>
+          </label>
+          <label class="full">
+            <span>Receiving or delivery notes (optional)</span>
+            <textarea id="orderNotes" rows="2" placeholder="Receiving hours, access instructions, or preferences">
+            </textarea>
+          </label>
+        </div>
+        <div class="remember-details">
+          <label>
+            <input id="rememberOrderDetails" type="checkbox">
+            <span>Remember my business, billing and delivery details on this device</span>
+          </label>
+          <button id="forgetSavedDetails" class="forget-saved" type="button" onclick="forgetOrderDetails()" hidden>Forget saved details</button>
+          <small>Only saved in this browser. Not stored on a server.</small>
+        </div>
+        <p class="order-policy-note">Order cutoff and requested-date availability, delivery charges, payment method, and invoice details are confirmed with you before approval.</p>
+        <div class="order-footer">
+          <button class="primary" type="button" onclick="sendOrder()">Request Rate Confirmation on WhatsApp →</button>
+          <button class="copy-order" type="button" onclick="copyOrderSummary()">Copy order text</button>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="requestModal">
+      <div class="modal-box">
+        <button class="close" type="button" onclick="closeModal()" aria-label="Close request">×</button>
+        <span class="eyebrow">CUSTOM PROCUREMENT</span>
+        <h2>Request any vegetable.</h2>
+        <p>Tell us the product, quantity and date. We will check market availability and confirm the rate.</p>
+        <div class="form-grid">
+          <input id="reqProduct" placeholder="Product name">
+          <input id="reqQty" type="number" min="0.1" step="0.1" placeholder="Quantity">
+          <select id="reqUnit">
+            <option>kg</option>
+            <option>piece</option>
+            <option>bunch</option>
+            <option>box</option>
+            <option>crate</option>
+          </select>
+          <input id="reqDate" type="date">
+          <input id="reqQuality" placeholder="Quality / size / variety">
+          <textarea id="reqNotes" placeholder="Notes or special requirement">
+          </textarea>
+        </div>
+        <button class="primary wide" type="button" onclick="sendRequest()">Request via WhatsApp →</button>
+      </div>
+    </div>
+    <script src="app.js">
+    </script>
+  </body>
+</html>
